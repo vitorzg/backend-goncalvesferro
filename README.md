@@ -63,6 +63,7 @@ mvn spring-boot:run
 Pronto o Projeto estará rodando.
 
 <h2 id="routes">📍 API Endpoints</h2>
+
 ​
 | Rotas               | Descrição            | Role                         
 |----------------------|---------------------|--------------------------------
