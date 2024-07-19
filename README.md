@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-    <b>Simple description of what your project do or how to use it.</b>
+    <b>Uma API simples e eficiente que atende as necessidades do site com o mesmo nome.</b>
 </p>
 
 <h2 id="technologies">⚙ Tecnologias</h2>
