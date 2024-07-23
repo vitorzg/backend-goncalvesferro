@@ -34,7 +34,7 @@ public class SecurityConfig {
                                                                     // .requestMatchers(HttpMethod.DELETE, "user/{id}").hasRole("ADMIN")
                                                                     .anyRequest().permitAll()
                                                                     )
-                                                                .addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class)
+                                                                // .addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class)
                                                                 .build();
 
     }
@@ -44,8 +44,8 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+    // @Bean
+    // public PasswordEncoder passwordEncoder() {
+    //     return new BCryptPasswordEncoder();
+    // }
 }

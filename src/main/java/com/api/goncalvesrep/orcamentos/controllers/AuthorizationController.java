@@ -24,24 +24,32 @@ import jakarta.validation.Valid;
 public class AuthorizationController {
 
     @Autowired
-    private AuthenticationManager authenticationManager;
+    AuthenticationManager authenticationManager;
 
     @Autowired
     private UserRepository repository;
 
-    @Autowired
-    private TokenService tokenService;
+    // @Autowired
+    // private TokenService tokenService;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO data){
-
+    public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        var token = this.tokenService.generatedToken((UserModel) auth.getPrincipal());
 
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        return ResponseEntity.ok().build();
     }
+    // @PostMapping("/login")
+    // public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO data){
+
+    //     var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
+    //     var auth = this.authenticationManager.authenticate(usernamePassword);
+
+    //     var token = this.tokenService.generatedToken((UserModel) auth.getPrincipal());
+
+    //     return ResponseEntity.ok(new LoginResponseDTO(token));
+    // }
 
     @PostMapping("/register")
     public ResponseEntity<UserModel> register(@RequestBody @Valid RegisterDTO data){
